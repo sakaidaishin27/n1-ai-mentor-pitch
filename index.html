@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>全員に、1人ずつ。 | エヌイチ AIチャットコンサル構想</title>
+<title>配信から、対話へ。 | エヌイチ AIチャットコンサル構想</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +19,7 @@
   --text-mute: #6b7280;
   --accent: #ff6b35;
   --accent-glow: rgba(255, 107, 53, 0.18);
+  --accent-strong: rgba(255, 107, 53, 0.35);
   --line-green: #06c755;
   --line-bg: #8eaeca;
   --border: #2a2a36;
@@ -281,14 +282,8 @@ html, body { background: var(--bg); }
   font-weight: 700;
 }
 
-.s-loss .chart {
-  width: 100%;
-}
-
-.s-loss svg {
-  width: 100%;
-  height: auto;
-}
+.s-loss .chart { width: 100%; }
+.s-loss svg { width: 100%; height: auto; }
 
 .chart-label-bold {
   font-family: 'Noto Sans JP', sans-serif;
@@ -345,17 +340,61 @@ html, body { background: var(--bg); }
 }
 
 /* ========================================
-   #7 CLAUDE CAN
+   #7 DECLARATION (発表のメイン宣言)
+   ======================================== */
+.s-declaration {
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.10) 0%, transparent 70%);
+}
+
+.s-declaration .lead {
+  font-size: 2rem;
+  color: var(--text-dim);
+  margin-bottom: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.s-declaration h1 {
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  margin-bottom: 3rem;
+}
+
+.s-declaration h1 .em {
+  color: var(--accent);
+  text-shadow: 0 0 60px var(--accent-glow);
+}
+
+.s-declaration .stack {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.4em;
+  color: var(--text-dim);
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.s-declaration .stack .dot {
+  color: var(--accent);
+  margin: 0 0.7rem;
+}
+
+/* ========================================
+   #8 CLAUDE CAN
    ======================================== */
 .s-can {
   padding: 100px 120px;
 }
 
 .s-can h1 {
-  font-size: 5.5rem;
+  font-size: 5.2rem;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3.5rem;
   letter-spacing: -0.03em;
 }
 
@@ -364,29 +403,29 @@ html, body { background: var(--bg); }
 .s-can .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
 .s-can .card {
-  padding: 2.5rem;
+  padding: 2.2rem;
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 20px;
+  border-radius: 18px;
   position: relative;
 }
 
 .s-can .card .num {
   position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  top: 1.4rem;
+  right: 1.8rem;
   font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--text-mute);
   font-weight: 700;
 }
 
 .s-can .card .title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 900;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -395,7 +434,7 @@ html, body { background: var(--bg); }
 .s-can .card .title .accent { color: var(--accent); }
 
 .s-can .card .desc {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--text-dim);
   line-height: 1.7;
 }
@@ -406,7 +445,7 @@ html, body { background: var(--bg); }
 }
 
 /* ========================================
-   #8 MOMENT (LINE chat)
+   #9 MOMENT (LINE chat)
    ======================================== */
 .s-moment {
   display: grid;
@@ -521,13 +560,13 @@ html, body { background: var(--bg); }
 }
 
 /* ========================================
-   #9 ROADMAP (エヌイチファネル7段階)
+   #10 FUNNEL (エヌイチ実ファネル6段階 + AI bot insertion)
    ======================================== */
-.s-step {
+.s-funnel {
   padding: 80px 80px;
 }
 
-.s-step h1 {
+.s-funnel h1 {
   font-size: 4.2rem;
   font-weight: 900;
   margin-bottom: 1rem;
@@ -535,114 +574,191 @@ html, body { background: var(--bg); }
   text-align: center;
 }
 
-.s-step h1 .em { color: var(--accent); }
+.s-funnel h1 .em { color: var(--accent); }
 
-.s-step .lead {
-  font-size: 1.3rem;
+.s-funnel .lead {
+  font-size: 1.4rem;
   color: var(--text-dim);
   margin-bottom: 3rem;
   text-align: center;
   line-height: 1.6;
 }
 
-.s-step .funnel {
+.funnel-row {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0.4rem;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr 1fr 1fr;
+  gap: 0.5rem;
+  align-items: stretch;
   margin: 2rem 0;
-}
-
-.s-step .stage {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.4rem 0.6rem;
-  text-align: center;
   position: relative;
 }
 
-.s-step .stage.now {
-  background: var(--accent-glow);
-  border-color: var(--accent);
+.funnel-row .stage {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.2rem 0.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.s-step .stage .phase {
-  font-size: 0.75rem;
+.funnel-row .stage .phase {
+  font-size: 0.7rem;
   color: var(--text-mute);
   font-weight: 700;
   letter-spacing: 0.1em;
   margin-bottom: 0.5rem;
 }
 
-.s-step .stage .label {
-  font-size: 1.15rem;
+.funnel-row .stage .label {
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1.3;
 }
 
-.s-step .stage.now .label {
+.funnel-row .stage.flank {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.funnel-row .stage.flank .label {
   color: var(--accent);
 }
 
-.s-step .stage.now::before {
-  content: "今ここ";
+.funnel-row .ai-bot {
+  background: linear-gradient(135deg, var(--accent) 0%, #ff9a35 100%);
+  border-radius: 14px;
+  padding: 1rem 0.6rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow); }
+  50% { box-shadow: 0 0 60px var(--accent-strong), 0 0 120px var(--accent-strong); }
+}
+
+.funnel-row .ai-bot .badge {
+  font-size: 0.7rem;
+  color: white;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+.funnel-row .ai-bot .name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+
+.funnel-row .ai-bot .desc {
+  font-size: 0.85rem;
+  color: white;
+  opacity: 0.95;
+  line-height: 1.3;
+}
+
+.funnel-row .ai-bot::before {
+  content: "ここから始める";
   position: absolute;
-  top: -14px;
+  top: -28px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--accent);
-  color: white;
+  background: var(--text);
+  color: var(--bg);
   font-size: 0.75rem;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 6px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-weight: 900;
+  letter-spacing: 0.1em;
   white-space: nowrap;
 }
 
-.s-step .footnote {
+.funnel-row .arrow-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-mute);
+  font-size: 1.2rem;
+}
+
+.s-funnel .footnote {
   margin-top: 3rem;
   font-size: 1.4rem;
   color: var(--text-dim);
   text-align: center;
 }
 
-.s-step .footnote .em {
+.s-funnel .footnote .em {
   color: var(--accent);
   font-weight: 700;
 }
 
 /* ========================================
-   #10 CLOSING
+   #11 CLOSING (ぶち上げ)
    ======================================== */
 .s-closing {
   align-items: center;
   text-align: center;
+  padding: 80px 100px;
+}
+
+.s-closing .pre {
+  font-size: 2.4rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.s-closing .pre .strong {
+  color: var(--text);
+  font-weight: 900;
 }
 
 .s-closing h1 {
-  font-size: 6rem;
+  font-size: 5.5rem;
   font-weight: 900;
-  line-height: 1.4;
+  line-height: 1.3;
   letter-spacing: -0.03em;
+  margin-bottom: 2.5rem;
 }
 
-.s-closing h1 .em { color: var(--accent); }
-
-.s-closing .stack {
-  margin-top: 4rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  letter-spacing: 0.4em;
-  color: var(--text-mute);
-  font-weight: 700;
-}
-
-.s-closing .stack .dot {
+.s-closing h1 .em {
   color: var(--accent);
-  margin: 0 0.7rem;
 }
+
+.s-closing .megaphone {
+  font-size: 9rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--accent) 0%, #ff9a35 50%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 50px var(--accent-glow));
+  margin: 2rem 0;
+}
+
+.s-closing .small {
+  font-size: 1.4rem;
+  color: var(--text-mute);
+  margin-top: 3rem;
+  font-style: italic;
+}
+
 </style>
 </head>
 <body>
@@ -654,9 +770,9 @@ html, body { background: var(--bg); }
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-title">
-    <h1>全員に、<br><span class="accent">1人ずつ</span>。</h1>
+    <h1>配信から、<br><span class="accent">対話</span>へ。</h1>
     <div class="underline"></div>
-    <div class="subtitle">Claude Code で組む、8万人のチャットコンサル。</div>
+    <div class="subtitle">Claude Code で作る、8万人のチャットコンサル。</div>
     <div class="meta">IDEATHON / 2026.04.29</div>
   </div>
 </section>
@@ -721,50 +837,29 @@ html, body { background: var(--bg); }
     </div>
     <div class="chart">
       <svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg">
-        <!-- Grid baseline (background subtle) -->
         <line x1="100" y1="500" x2="820" y2="500" stroke="#3a3a48" stroke-width="2" />
         <line x1="100" y1="500" x2="100" y2="60" stroke="#3a3a48" stroke-width="2" />
-
-        <!-- X axis arrow -->
         <polygon points="820,500 810,494 810,506" fill="#3a3a48" />
-        <!-- Y axis arrow -->
         <polygon points="100,60 94,70 106,70" fill="#3a3a48" />
-
-        <!-- Y axis label (顧客の熱量) -->
         <text x="50" y="280" class="chart-label-bold" fill="#b8bcc4" text-anchor="middle" transform="rotate(-90 50 280)">顧客の熱量</text>
-        <!-- X axis label (時間) -->
         <text x="830" y="510" class="chart-label" fill="#b8bcc4">時間</text>
-
-        <!-- 行動の壁 dashed line -->
         <line x1="100" y1="280" x2="780" y2="280" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6" />
         <text x="90" y="285" class="chart-label-small" fill="#9ca3af" text-anchor="end">行動の壁</text>
-
-        <!-- AI即時対応 (青) - smooth curve maintaining height -->
         <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290"
               stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" />
-        <!-- AI gradient fill below -->
         <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290 L 760,500 L 130,500 Z"
               fill="url(#blueGrad)" opacity="0.18" />
-        <!-- Arrow at end -->
         <polygon points="760,290 745,283 745,297" fill="#38bdf8" />
-
-        <!-- 従来の対応 (赤) - staircase descending -->
         <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490"
               stroke="#ef4444" stroke-width="6" fill="none" stroke-linejoin="round" />
         <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490 L 700,500 L 130,500 Z"
               fill="url(#redGrad)" opacity="0.18" />
-
-        <!-- 離脱 mark (×) -->
         <circle cx="710" cy="495" r="14" fill="#ef4444" opacity="0.25" />
         <text x="710" y="503" class="chart-label-bold" fill="#ef4444" text-anchor="middle" font-weight="900">×</text>
         <text x="730" y="500" class="chart-label-small" fill="#ef4444" font-weight="700">離脱</text>
-
-        <!-- Labels for lines -->
         <text x="600" y="240" class="chart-label-bold" fill="#38bdf8" font-weight="700">AI 即時対応</text>
         <text x="780" y="260" class="chart-label-small" fill="#38bdf8" text-anchor="end">→ 次のアクションへ</text>
         <text x="500" y="430" class="chart-label-bold" fill="#ef4444" font-weight="700">従来の対応</text>
-
-        <!-- Gradients -->
         <defs>
           <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
@@ -781,7 +876,7 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 6 / IMPOSSIBLE
+     SLIDE 6 / WALL
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-impossible">
@@ -797,12 +892,24 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 7 / CLAUDE CAN
+     SLIDE 7 / DECLARATION (発表のメイン宣言)
+     ============================================================ -->
+<section data-background-color="#0a0a0f">
+  <div class="slide s-declaration">
+    <div class="slide-num">07 / WE BUILD</div>
+    <div class="lead">— だから、私たちは作ります。</div>
+    <h1>Claude で、<br><span class="em">8万人に対応する</span><br>AIチャットbotを。</h1>
+    <div class="stack">CLAUDE CODE <span class="dot">·</span> CLAUDE AGENT SDK <span class="dot">·</span> LINE</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 8 / CLAUDE CAN
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-can">
-    <div class="slide-num">07 / SOLUTION</div>
-    <h1>Claude なら、<span class="em">できる</span>。</h1>
+    <div class="slide-num">08 / WHY CLAUDE</div>
+    <h1>Claude なら、<span class="em">こうできる</span>。</h1>
     <div class="grid">
       <div class="card">
         <div class="num">01</div>
@@ -837,11 +944,11 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 8 / MOMENT (LINE chat)
+     SLIDE 9 / MOMENT (LINE chat)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-moment">
-    <div class="slide-num">08 / MOMENT</div>
+    <div class="slide-num">09 / MOMENT</div>
     <div class="left">
       <div class="time-big">23:14</div>
       <div class="desc">
@@ -871,60 +978,64 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 9 / ROADMAP (エヌイチファネル7段階)
+     SLIDE 10 / FUNNEL (個別予約 → 個別相談 の間に AI bot 起動)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide s-step">
-    <div class="slide-num">09 / FUNNEL</div>
-    <h1>まず、<span class="em">予約後</span>のフェーズから。</h1>
+  <div class="slide s-funnel">
+    <div class="slide-num">10 / WHERE</div>
+    <h1>まず、<span class="em">この期間</span>に入れる。</h1>
     <div class="lead">
-      個別相談予約者に向けて検証 → 成果が出れば、ファネル全体に展開。<br>
-      KPI ＝ <strong style="color:var(--accent)">当日参加率 / 成約率</strong>
+      個別予約 → 個別相談 までの数日〜数週間。<br>
+      ここで温度を維持できれば、<strong style="color:var(--accent)">当日参加率と成約率</strong>が変わる。
     </div>
-    <div class="funnel">
+    <div class="funnel-row">
       <div class="stage">
         <div class="phase">PHASE 1</div>
         <div class="label">リストイン</div>
       </div>
       <div class="stage">
         <div class="phase">PHASE 2</div>
-        <div class="label">セミナー</div>
+        <div class="label">セミナー<br>LINE移行</div>
       </div>
       <div class="stage">
         <div class="phase">PHASE 3</div>
-        <div class="label">ライン移行</div>
+        <div class="label">個別検討中</div>
       </div>
-      <div class="stage">
+      <div class="stage flank">
         <div class="phase">PHASE 4</div>
-        <div class="label">検討中</div>
+        <div class="label">個別予約</div>
       </div>
-      <div class="stage now">
+      <div class="ai-bot">
+        <div class="badge">AI BOT</div>
+        <div class="name">伴走期間</div>
+        <div class="desc">不安解消・準備支援</div>
+      </div>
+      <div class="stage flank">
         <div class="phase">PHASE 5</div>
-        <div class="label">予約後</div>
+        <div class="label">個別相談</div>
       </div>
       <div class="stage">
         <div class="phase">PHASE 6</div>
         <div class="label">成約</div>
       </div>
-      <div class="stage">
-        <div class="phase">PHASE 7</div>
-        <div class="label">受講中</div>
-      </div>
     </div>
     <div class="footnote">
-      Claude Code なら、<span class="em">次のフェーズが見えた瞬間に、コードで埋められる。</span>
+      ここで成果が出れば、<span class="em">他のフェーズにもAIを展開</span>していける。
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 10 / CLOSING
+     SLIDE 11 / CLOSING (ぶち上げ宣言)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-closing">
-    <div class="slide-num">10 / CLOSING</div>
-    <h1>1ヶ月後、<br><span class="em">最初のテスト結果</span>を持ってきます。</h1>
-    <div class="stack">CLAUDE CODE <span class="dot">·</span> LINE <span class="dot">·</span> AGENT SDK</div>
+    <div class="slide-num">11 / GO</div>
+    <div class="pre">このAIチャットbotの可能性は、<span class="strong">無限大</span>。</div>
+    <h1>セミナー事業者のマーケを、<br><span class="em">塗り替える</span>と本気で思ってる。</h1>
+    <div class="megaphone">だから、ぶち上げに行く。</div>
+    <div class="pre">どこよりも早く、<span class="strong">エヌイチで</span>。</div>
+    <div class="small">— 1ヶ月後、最初のテスト結果を持ってきます。</div>
   </div>
 </section>
 
