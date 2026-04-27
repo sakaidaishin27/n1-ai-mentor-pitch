@@ -559,6 +559,26 @@ html, body { background: var(--bg); }
   font-weight: 700;
 }
 
+.bubble.user .self-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 11px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.bubble.user .hl-w {
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.85);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 /* ========================================
    #10 FUNNEL (エヌイチ実ファネル6段階 + AI bot insertion)
    ======================================== */
@@ -988,28 +1008,34 @@ html, body { background: var(--bg); }
     <div class="left">
       <div class="time-big">23:14</div>
       <div class="desc">
-        田中さんが、ふと将来に不安になる夜。<br>
+        奥山さんが、ふと将来に不安になる夜。<br>
         普通なら朝まで温度は冷めて、もう戻ってこない。
       </div>
       <div class="punch">
-        でも今夜は、<span class="em">数十秒後に奥山さんが返す。</span><br>
-        しかも、田中さんを<span class="em">覚えた状態で。</span>
+        でも今夜は、<span class="em">数十秒後にAIが返す。</span><br>
+        しかも、奥山さんを<span class="em">覚えた状態で。</span>
       </div>
     </div>
     <div class="phone">
       <div class="header">N1 個別相談 専用LINE</div>
-      <div class="bubble user">AIに、私の仕事が取られるのかな...</div>
       <div class="bubble bot">
         <div class="avatar">奥</div>
         <div class="body">
-          <div class="name">奥山さん（AIメンター）</div>
-          田中さん、こんばんは。<br>
-          1ヶ月前、「<span style="color:var(--accent);font-weight:700">AIで人生変えたい</span>」って<br>
-          言ってましたよね。<br><br>
-          今からなら、<span style="color:var(--accent);font-weight:700">まだ間に合いますよ！</span>
+          <div class="name">奥山さん</div>
+          AIに、私の仕事が取られるのかな...
         </div>
       </div>
-      <div class="bubble user">...頑張ってみます。</div>
+      <div class="bubble user">
+        <div class="self-tag">AIチャットbot</div>
+        奥山さん、こんばんは。<br>
+        1ヶ月前、「<span class="hl-w">AIで人生変えたい</span>」って<br>
+        言ってましたよね。<br><br>
+        今からなら、<span class="hl-w">まだ間に合いますよ！</span>
+      </div>
+      <div class="bubble bot">
+        <div class="avatar">奥</div>
+        <div class="body">...頑張ってみます。</div>
+      </div>
     </div>
   </div>
 </section>
