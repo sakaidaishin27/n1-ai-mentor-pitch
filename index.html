@@ -795,7 +795,7 @@ html, body { background: var(--bg); }
   <div class="slide s-answer">
     <div class="slide-num">03 / A</div>
     <div class="lead">答えは、シンプルです。</div>
-    <h1>見込み客 全員に、<br><span class="em">1人ずつ</span>、答える。</h1>
+    <h1>LINE友達 全員に、<br><span class="em">1人ずつ</span>、答える。</h1>
     <div class="seal">これ以上の方法は、ありません。</div>
   </div>
 </section>
@@ -832,44 +832,80 @@ html, body { background: var(--bg); }
       <h2>「いつか返ってくる」を、<br>お客様は<span class="em">待てない</span>。</h2>
       <p class="desc">
         問い合わせた直後が、<span class="strong">熱量のピーク</span>。<br><br>
-        返信が遅れるだけで、本来つながるはずだった見込み客が離脱する <span class="strong">「見えない機会損失」</span>が起きている。
+        返信が遅れるだけで、本来つながるはずだった見込み客が離脱する「<span class="strong">見えない機会損失</span>」が起きています。
       </p>
     </div>
     <div class="chart">
-      <svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg">
-        <line x1="100" y1="500" x2="820" y2="500" stroke="#3a3a48" stroke-width="2" />
-        <line x1="100" y1="500" x2="100" y2="60" stroke="#3a3a48" stroke-width="2" />
-        <polygon points="820,500 810,494 810,506" fill="#3a3a48" />
-        <polygon points="100,60 94,70 106,70" fill="#3a3a48" />
-        <text x="50" y="280" class="chart-label-bold" fill="#b8bcc4" text-anchor="middle" transform="rotate(-90 50 280)">顧客の熱量</text>
-        <text x="830" y="510" class="chart-label" fill="#b8bcc4">時間</text>
-        <line x1="100" y1="280" x2="780" y2="280" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6" />
-        <text x="90" y="285" class="chart-label-small" fill="#9ca3af" text-anchor="end">行動の壁</text>
-        <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290"
-              stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" />
-        <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290 L 760,500 L 130,500 Z"
-              fill="url(#blueGrad)" opacity="0.18" />
-        <polygon points="760,290 745,283 745,297" fill="#38bdf8" />
-        <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490"
-              stroke="#ef4444" stroke-width="6" fill="none" stroke-linejoin="round" />
-        <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490 L 700,500 L 130,500 Z"
-              fill="url(#redGrad)" opacity="0.18" />
-        <circle cx="710" cy="495" r="14" fill="#ef4444" opacity="0.25" />
-        <text x="710" y="503" class="chart-label-bold" fill="#ef4444" text-anchor="middle" font-weight="900">×</text>
-        <text x="730" y="500" class="chart-label-small" fill="#ef4444" font-weight="700">離脱</text>
-        <text x="600" y="240" class="chart-label-bold" fill="#38bdf8" font-weight="700">AI 即時対応</text>
-        <text x="780" y="260" class="chart-label-small" fill="#38bdf8" text-anchor="end">→ 次のアクションへ</text>
-        <text x="500" y="430" class="chart-label-bold" fill="#ef4444" font-weight="700">従来の対応</text>
+      <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55" />
             <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
           </linearGradient>
           <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#ef4444" stop-opacity="0.5" />
             <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
           </linearGradient>
+          <filter id="blueGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="redGlow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
+
+        <!-- Axes -->
+        <line x1="120" y1="500" x2="850" y2="500" stroke="#4b5563" stroke-width="2.5" />
+        <line x1="120" y1="500" x2="120" y2="80" stroke="#4b5563" stroke-width="2.5" />
+        <polygon points="850,500 836,492 836,508" fill="#4b5563" />
+        <polygon points="120,80 112,94 128,94" fill="#4b5563" />
+
+        <!-- Axis labels -->
+        <text x="60" y="290" font-size="28" font-weight="700" fill="#b8bcc4" text-anchor="middle" transform="rotate(-90 60 290)">顧客の熱量</text>
+        <text x="858" y="528" font-size="24" font-weight="600" fill="#b8bcc4">時間</text>
+
+        <!-- Wall line (more prominent) -->
+        <line x1="120" y1="305" x2="820" y2="305" stroke="#9ca3af" stroke-width="2.5" stroke-dasharray="10 6" opacity="0.75" />
+        <rect x="138" y="288" width="100" height="32" fill="#0a0a0f" />
+        <text x="188" y="312" font-size="20" font-weight="700" fill="#9ca3af" text-anchor="middle">行動の壁</text>
+
+        <!-- AI fill area -->
+        <path d="M 150,130 Q 350,115 540,170 Q 720,205 810,225 L 810,500 L 150,500 Z"
+              fill="url(#blueGrad)" opacity="0.18" />
+
+        <!-- Traditional fill area -->
+        <path d="M 150,130 L 200,130 L 200,200 L 270,200 L 270,275 L 340,275 L 340,355 L 420,355 L 420,425 L 720,425 L 720,470 L 150,470 Z"
+              fill="url(#redGrad)" opacity="0.20" />
+
+        <!-- AI line (blue) -->
+        <path d="M 150,130 Q 350,115 540,170 Q 720,205 810,225"
+              stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#blueGlow)" />
+        <polygon points="824,225 808,217 808,233" fill="#38bdf8" />
+
+        <!-- Traditional line (red) -->
+        <path d="M 150,130 L 200,130 L 200,200 L 270,200 L 270,275 L 340,275 L 340,355 L 420,355 L 420,425 L 720,425 L 720,470"
+              stroke="#ef4444" stroke-width="6" fill="none" stroke-linejoin="round" filter="url(#redGlow)" />
+
+        <!-- Big × mark for 離脱 -->
+        <circle cx="745" cy="470" r="34" fill="#ef4444" opacity="0.13" />
+        <circle cx="745" cy="470" r="22" fill="#ef4444" opacity="0.35" />
+        <text x="745" y="486" font-size="44" font-weight="900" fill="#ef4444" text-anchor="middle">×</text>
+        <text x="745" y="525" font-size="22" font-weight="900" fill="#ef4444" text-anchor="middle">離脱</text>
+
+        <!-- AI labels -->
+        <text x="555" y="148" font-size="30" font-weight="800" fill="#38bdf8">AI即時対応</text>
+        <text x="555" y="178" font-size="20" font-weight="500" fill="#38bdf8" opacity="0.9">→ 次のアクションへ</text>
+
+        <!-- Traditional label (on long flat segment) -->
+        <text x="490" y="412" font-size="30" font-weight="800" fill="#ef4444">従来の対応</text>
       </svg>
     </div>
   </div>
