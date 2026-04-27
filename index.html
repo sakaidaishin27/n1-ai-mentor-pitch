@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>8万人と、いつでも。 | エヌイチ AIメンター構想</title>
+<title>全員に、1人ずつ。 | エヌイチ AIチャットコンサル構想</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +15,8 @@
   --bg-alt: #14141c;
   --bg-elev: #1a1a24;
   --text: #ffffff;
-  --text-dim: #9ca3af;
-  --text-mute: #4b5563;
+  --text-dim: #b8bcc4;
+  --text-mute: #6b7280;
   --accent: #ff6b35;
   --accent-glow: rgba(255, 107, 53, 0.18);
   --line-green: #06c755;
@@ -24,13 +24,11 @@
   --border: #2a2a36;
 }
 
-html, body {
-  background: var(--bg);
-}
+html, body { background: var(--bg); }
 
 .reveal {
   font-family: 'Noto Sans JP', sans-serif;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   background: var(--bg);
   color: var(--text);
 }
@@ -54,13 +52,10 @@ html, body {
 
 ::selection { background: var(--accent); color: white; }
 
-/* ========================================
-   COMMON
-   ======================================== */
 .slide {
   width: 100%;
   height: 100%;
-  padding: 80px;
+  padding: 100px 120px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -70,223 +65,326 @@ html, body {
 
 .slide-num {
   position: absolute;
-  top: 40px;
-  left: 60px;
+  top: 50px;
+  left: 80px;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: var(--text-mute);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
+  font-weight: 700;
 }
 
+.accent { color: var(--accent); }
+
 /* ========================================
-   #1 HERO TITLE
+   #1 TITLE
    ======================================== */
-.hero {
+.s-title {
   text-align: center;
   align-items: center;
 }
 
-.hero h1 {
-  font-size: 9rem;
+.s-title h1 {
+  font-size: 11rem;
   font-weight: 900;
   letter-spacing: -0.04em;
-  line-height: 1.05;
-  margin-bottom: 2.5rem;
+  line-height: 1.1;
+  margin-bottom: 3rem;
 }
 
-.hero h1 .accent {
-  color: var(--accent);
-}
-
-.hero .underline {
-  width: 80px;
-  height: 4px;
+.s-title .underline {
+  width: 120px;
+  height: 6px;
   background: var(--accent);
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 3rem;
 }
 
-.hero .subtitle {
-  font-size: 1.6rem;
+.s-title .subtitle {
+  font-size: 2.4rem;
   color: var(--text-dim);
   font-weight: 400;
 }
 
-.hero .meta {
+.s-title .meta {
   position: absolute;
-  bottom: 60px;
-  right: 80px;
-  font-size: 0.95rem;
+  bottom: 70px;
+  right: 100px;
+  font-size: 1.1rem;
   color: var(--text-mute);
   font-family: 'Inter', sans-serif;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
 /* ========================================
-   #2 STATS
+   #2 QUESTION
    ======================================== */
-.stats {
-  justify-content: space-evenly;
-  padding: 100px 120px;
-}
-
-.stats .lead {
-  font-size: 1.4rem;
-  color: var(--text-dim);
-  margin-bottom: 1rem;
-}
-
-.stat-row {
-  display: grid;
-  grid-template-columns: 1fr 1.4fr;
-  gap: 4rem;
+.s-question {
   align-items: center;
-  padding: 2.2rem 0;
-  border-top: 1px solid var(--border);
+  text-align: center;
 }
 
-.stat-row:last-of-type {
-  border-bottom: 1px solid var(--border);
+.s-question .lead {
+  font-size: 2rem;
+  color: var(--text-dim);
+  margin-bottom: 4rem;
+  font-weight: 400;
 }
 
-.stat-row .num {
+.s-question h1 {
   font-size: 7rem;
   font-weight: 900;
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  letter-spacing: -0.05em;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+}
+
+.s-question h1 .accent { color: var(--accent); }
+
+/* ========================================
+   #3 ANSWER
+   ======================================== */
+.s-answer {
+  align-items: center;
+  text-align: center;
+}
+
+.s-answer .lead {
+  font-size: 2rem;
+  color: var(--text-dim);
+  margin-bottom: 4rem;
+  font-weight: 400;
+}
+
+.s-answer h1 {
+  font-size: 6.5rem;
+  font-weight: 900;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+}
+
+.s-answer h1 .em {
+  color: var(--accent);
+  border-bottom: 6px solid var(--accent);
+  padding-bottom: 8px;
+}
+
+.s-answer .seal {
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  color: var(--text-dim);
+}
+
+/* ========================================
+   #4 REALITY
+   ======================================== */
+.s-reality {
+  align-items: center;
+  text-align: center;
+}
+
+.s-reality h2 {
+  font-size: 2.6rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.s-reality .stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  margin: 2rem 0;
+}
+
+.s-reality .stage .num {
+  font-size: 12rem;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.06em;
   background: linear-gradient(180deg, #ffffff 0%, #888 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
 }
 
-.stat-row .num .small {
-  font-size: 3rem;
-  color: var(--text-dim);
-  -webkit-text-fill-color: var(--text-dim);
-  font-weight: 700;
-}
-
-.stat-row .label {
-  font-size: 1.3rem;
-  color: var(--text);
-  line-height: 1.6;
-}
-
-.stat-row .label .muted {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  display: block;
-  margin-top: 0.4rem;
-}
-
-.stats .punch {
-  font-size: 1.5rem;
-  color: var(--accent);
-  font-weight: 700;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-/* ========================================
-   #3 QUOTE
-   ======================================== */
-.quote-slide {
-  align-items: center;
-  text-align: center;
-}
-
-.quote-mark {
-  font-family: 'Inter', sans-serif;
-  font-size: 12rem;
-  color: var(--accent);
-  opacity: 0.25;
-  line-height: 0.5;
-  margin-bottom: 2rem;
-}
-
-.quote-text {
-  font-size: 2.6rem;
-  font-weight: 300;
-  line-height: 1.7;
-  max-width: 1200px;
-}
-
-.quote-text .strong {
-  font-weight: 700;
-  color: var(--text);
-  border-bottom: 3px solid var(--accent);
-  padding-bottom: 4px;
-}
-
-.quote-text .em {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.source {
-  font-size: 0.95rem;
-  color: var(--text-mute);
-  margin-top: 4rem;
-  font-style: italic;
-}
-
-/* ========================================
-   #4 LOSS
-   ======================================== */
-.loss {
-  align-items: center;
-  text-align: center;
-}
-
-.loss .label {
+.s-reality .stage .num-label {
   font-size: 1.5rem;
   color: var(--text-dim);
-  margin-bottom: 2rem;
-}
-
-.loss .equation {
-  font-size: 5rem;
-  font-weight: 900;
-  margin: 2rem 0;
-  letter-spacing: -0.03em;
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-}
-
-.loss .equation .red {
-  color: var(--accent);
-}
-
-.loss .equation .arrow {
-  color: var(--text-mute);
-  margin: 0 1.5rem;
-  font-weight: 400;
-}
-
-.loss .punch {
-  font-size: 2.2rem;
-  margin-top: 4rem;
+  margin-top: 1rem;
   font-weight: 500;
-  color: var(--text);
+  -webkit-text-fill-color: var(--text-dim);
 }
 
-.loss .punch .em {
+.s-reality .stage .arrow {
+  font-size: 4rem;
+  color: var(--text-mute);
+  font-weight: 100;
+}
+
+.s-reality .stage .doing {
+  font-size: 4rem;
+  font-weight: 700;
   color: var(--accent);
+  text-align: left;
+}
+
+.s-reality .stage .doing .small {
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  display: block;
+  margin-top: 1rem;
+}
+
+.s-reality .punch {
+  font-size: 2.2rem;
+  color: var(--text);
+  margin-top: 5rem;
+  font-weight: 700;
+}
+
+.s-reality .punch .em { color: var(--accent); }
+
+/* ========================================
+   #5 IF
+   ======================================== */
+.s-if {
+  align-items: center;
+  text-align: center;
+}
+
+.s-if h1 {
+  font-size: 6rem;
   font-weight: 900;
+  line-height: 1.5;
+  letter-spacing: -0.03em;
+  margin-bottom: 4rem;
+}
+
+.s-if h1 .em { color: var(--accent); }
+
+.s-if .desc {
+  font-size: 2.2rem;
+  color: var(--text-dim);
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.s-if .desc .strong {
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* ========================================
-   #5 LINE CHAT
+   #6 IMPOSSIBLE
    ======================================== */
-.line-chat {
+.s-impossible {
+  align-items: center;
+  text-align: center;
+}
+
+.s-impossible h1 {
+  font-size: 7rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 4rem;
+  line-height: 1.3;
+}
+
+.s-impossible h1 .em { color: var(--accent); }
+
+.s-impossible .calc {
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  margin: 2rem 0;
+  letter-spacing: -0.02em;
+}
+
+.s-impossible .calc .num { color: var(--accent); }
+.s-impossible .calc .vs { color: var(--text-mute); margin: 0 1.5rem; font-weight: 300; }
+
+.s-impossible .desc {
+  font-size: 2rem;
+  color: var(--text-dim);
+  margin-top: 3rem;
+  font-weight: 500;
+}
+
+/* ========================================
+   #7 CLAUDE CAN
+   ======================================== */
+.s-can {
+  padding: 100px 120px;
+}
+
+.s-can h1 {
+  font-size: 5.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 4rem;
+  letter-spacing: -0.03em;
+}
+
+.s-can h1 .em { color: var(--accent); }
+
+.s-can .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.s-can .card {
+  padding: 2.5rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  position: relative;
+}
+
+.s-can .card .num {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-mute);
+  font-weight: 700;
+}
+
+.s-can .card .title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.s-can .card .title .accent { color: var(--accent); }
+
+.s-can .card .desc {
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.s-can .card .desc .strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ========================================
+   #8 MOMENT (LINE chat)
+   ======================================== */
+.s-moment {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 6rem;
-  padding: 80px 100px;
+  padding: 100px 120px;
 }
 
-.line-chat .left .time-big {
-  font-size: 5rem;
+.s-moment .left .time-big {
+  font-size: 6rem;
   font-weight: 900;
   font-family: 'Inter', sans-serif;
   color: var(--accent);
@@ -294,35 +392,35 @@ html, body {
   line-height: 1;
 }
 
-.line-chat .left .desc {
-  font-size: 1.4rem;
+.s-moment .left .desc {
+  font-size: 1.7rem;
   color: var(--text-dim);
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   line-height: 1.7;
 }
 
-.line-chat .left .desc .em {
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.line-chat .left .punch {
-  font-size: 1.6rem;
-  margin-top: 2rem;
+.s-moment .left .punch {
+  font-size: 2rem;
+  margin-top: 2.5rem;
   color: var(--text);
   font-weight: 500;
   line-height: 1.6;
 }
 
+.s-moment .left .punch .em {
+  color: var(--accent);
+  font-weight: 900;
+}
+
 .phone {
   width: 100%;
-  max-width: 460px;
+  max-width: 520px;
   background: var(--line-bg);
-  padding: 28px 22px;
-  border-radius: 36px;
+  padding: 32px 26px;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   box-shadow: 0 30px 80px rgba(0,0,0,0.4), 0 0 0 8px #1a2230;
   font-family: 'Noto Sans JP', sans-serif;
 }
@@ -330,17 +428,18 @@ html, body {
 .phone .header {
   background: rgba(0,0,0,0.15);
   color: white;
-  padding: 6px 12px;
-  font-size: 0.8rem;
+  padding: 8px 14px;
+  font-size: 1rem;
   text-align: center;
   border-radius: 8px;
   margin-bottom: 8px;
+  font-weight: 500;
 }
 
 .bubble {
-  max-width: 78%;
-  padding: 12px 16px;
-  font-size: 1rem;
+  max-width: 80%;
+  padding: 14px 18px;
+  font-size: 1.15rem;
   line-height: 1.6;
 }
 
@@ -348,22 +447,24 @@ html, body {
   background: var(--line-green);
   color: white;
   align-self: flex-end;
-  border-radius: 18px 4px 18px 18px;
+  border-radius: 20px 6px 20px 20px;
 }
 
 .bubble.bot {
   background: white;
   color: #1a1a1a;
   align-self: flex-start;
-  border-radius: 4px 18px 18px 18px;
+  border-radius: 6px 20px 20px 20px;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   align-items: flex-start;
+  margin-left: 50px;
+  position: relative;
 }
 
 .bubble.bot .avatar {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   background: var(--accent);
   border-radius: 50%;
   flex-shrink: 0;
@@ -372,256 +473,106 @@ html, body {
   justify-content: center;
   color: white;
   font-weight: 900;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-family: 'Inter', sans-serif;
-  margin-left: -46px;
-  margin-top: 2px;
-}
-
-.bubble.bot .body {
-  flex: 1;
+  position: absolute;
+  left: -54px;
+  top: 0;
 }
 
 .bubble.bot .name {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: #666;
   margin-bottom: 4px;
   font-weight: 700;
 }
 
 /* ========================================
-   #6 BIG NUMBER
+   #9 FIRST STEP + ROADMAP (エヌイチのみ)
    ======================================== */
-.bignum {
-  align-items: center;
-  text-align: center;
+.s-step {
+  padding: 100px 120px;
 }
 
-.bignum .formula {
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--text-dim);
-  margin-bottom: 2rem;
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  letter-spacing: -0.02em;
-}
-
-.bignum .formula .x {
-  color: var(--accent);
-  margin: 0 1.5rem;
-}
-
-.bignum .result {
-  font-size: 11rem;
+.s-step h1 {
+  font-size: 4.5rem;
   font-weight: 900;
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  letter-spacing: -0.06em;
-  background: linear-gradient(135deg, #ff6b35 0%, #ffae35 50%, #ff6b35 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 0.95;
-  filter: drop-shadow(0 0 40px var(--accent-glow));
-}
-
-.bignum .unit {
-  font-size: 2rem;
-  color: var(--text-dim);
-  margin-top: 1rem;
-  font-weight: 500;
-}
-
-.bignum .desc {
-  font-size: 1.5rem;
-  margin-top: 3.5rem;
-  color: var(--text);
-  max-width: 900px;
-  line-height: 1.7;
-}
-
-.bignum .desc strong {
-  color: var(--accent);
-}
-
-/* ========================================
-   #7 CORE
-   ======================================== */
-.core {
-  align-items: center;
-  text-align: center;
-}
-
-.core h1 {
-  font-size: 5.5rem;
-  font-weight: 900;
-  line-height: 1.4;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.03em;
 }
 
-.core h1 .accent {
-  color: var(--accent);
-}
+.s-step h1 .em { color: var(--accent); }
 
-.core .seal {
-  margin-top: 3rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.4em;
-  color: var(--text-mute);
-}
-
-/* ========================================
-   #8 FLOW
-   ======================================== */
-.flow {
-  padding: 80px 120px;
-}
-
-.flow h2 {
-  font-size: 2.4rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
-
-.flow h2 .accent {
-  color: var(--accent);
-}
-
-.flow-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.flow-box {
-  padding: 1rem 2.5rem;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  font-size: 1.15rem;
-  font-weight: 500;
-  text-align: center;
-}
-
-.flow-box.highlight {
-  border-color: var(--accent);
-  background: var(--accent-glow);
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-.flow-box.result {
-  border-color: var(--accent);
-  background: var(--accent);
-  color: white;
-  font-weight: 900;
-  font-size: 1.25rem;
-}
-
-.flow-arrow {
-  color: var(--text-mute);
-  font-size: 1.4rem;
-  font-weight: 300;
-}
-
-.flow-bullets {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  padding: 1.2rem 2rem;
-  background: var(--bg-elev);
-  border: 1px dashed var(--border);
-  border-radius: 14px;
-  font-size: 1rem;
+.s-step .lead {
+  font-size: 1.5rem;
   color: var(--text-dim);
-}
-
-.flow-bullets div {
-  display: flex;
-  gap: 0.8rem;
-  align-items: baseline;
-}
-
-.flow-bullets .dot {
-  color: var(--accent);
-  font-weight: 900;
-}
-
-/* ========================================
-   #9 MATRIX
-   ======================================== */
-.matrix {
-  padding: 80px 100px;
-}
-
-.matrix h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-}
-
-.matrix h2 .accent {
-  color: var(--accent);
-}
-
-.matrix table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  font-size: 1.05rem;
-}
-
-.matrix th, .matrix td {
-  padding: 1.1rem 1.2rem;
-  text-align: left;
-  border-bottom: 1px solid var(--border);
-}
-
-.matrix thead th {
-  color: var(--text-dim);
-  font-weight: 500;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-bottom: 2px solid var(--border);
-}
-
-.matrix tbody tr td:first-child {
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--text);
-  width: 140px;
-}
-
-.matrix .now {
-  background: var(--accent-glow);
-  color: var(--accent);
-  font-weight: 800;
-  position: relative;
-}
-
-.matrix .now::after {
-  content: "今ここ";
-  position: absolute;
-  top: -8px;
-  right: 6px;
-  background: var(--accent);
-  color: white;
-  font-size: 0.65rem;
-  padding: 1px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-}
-
-.matrix .footnote {
-  margin-top: 2.5rem;
-  font-size: 1.1rem;
-  color: var(--text-dim);
-  text-align: center;
+  margin-bottom: 3rem;
   line-height: 1.6;
 }
 
-.matrix .footnote .em {
+.s-step .roadmap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.s-step .stage {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.s-step .stage.now {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+}
+
+.s-step .stage .phase {
+  font-size: 0.9rem;
+  color: var(--text-mute);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.s-step .stage .label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.s-step .stage.now .label {
+  color: var(--accent);
+}
+
+.s-step .stage.now::before {
+  content: "今ここ";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  font-size: 0.8rem;
+  padding: 3px 12px;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.s-step .footnote {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.s-step .footnote .em {
   color: var(--accent);
   font-weight: 700;
 }
@@ -629,35 +580,33 @@ html, body {
 /* ========================================
    #10 CLOSING
    ======================================== */
-.closing {
+.s-closing {
   align-items: center;
   text-align: center;
 }
 
-.closing h1 {
-  font-size: 5rem;
+.s-closing h1 {
+  font-size: 6rem;
   font-weight: 900;
   line-height: 1.4;
   letter-spacing: -0.03em;
 }
 
-.closing h1 .accent {
-  color: var(--accent);
-}
+.s-closing h1 .em { color: var(--accent); }
 
-.closing .stack {
+.s-closing .stack {
   margin-top: 4rem;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   letter-spacing: 0.4em;
   color: var(--text-mute);
+  font-weight: 700;
 }
 
-.closing .stack .dot {
+.s-closing .stack .dot {
   color: var(--accent);
-  margin: 0 0.6rem;
+  margin: 0 0.7rem;
 }
-
 </style>
 </head>
 <body>
@@ -668,97 +617,144 @@ html, body {
      SLIDE 1 / TITLE
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide hero">
-    <h1>8万人と、<br><span class="accent">いつでも</span>。</h1>
+  <div class="slide s-title">
+    <h1>全員に、<br><span class="accent">1人ずつ</span>。</h1>
     <div class="underline"></div>
-    <div class="subtitle">エヌイチ AIメンター構想</div>
+    <div class="subtitle">Claude Code で組む、8万人のチャットコンサル。</div>
     <div class="meta">IDEATHON / 2026.04.29</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 2 / FACT
+     SLIDE 2 / QUESTION
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide stats">
-    <div class="slide-num">02 / FACT</div>
-    <div class="lead">エヌイチが向き合っている顧客の現実。</div>
-
-    <div class="stat-row">
-      <div class="num">80,000</div>
-      <div class="label">
-        運用するLINEアカウント全体の友だち合計
-        <span class="muted">※ 重複込み（10アカウント横断）</span>
-      </div>
-    </div>
-
-    <div class="stat-row">
-      <div class="num">50<span class="small">/月</span></div>
-      <div class="label">
-        担当者1人が、深く向き合える顧客の上限
-        <span class="muted">※ 月あたり、推定値</span>
-      </div>
-    </div>
-
-    <div class="stat-row">
-      <div class="num">1,600<span class="small">倍</span></div>
-      <div class="label">
-        現実と理想のあいだに横たわる、その差
-      </div>
-    </div>
-
-    <div class="punch">残り 79,950 人 ＝ ほぼ"配信"でしか触れられていない。</div>
+  <div class="slide s-question">
+    <div class="slide-num">02 / Q</div>
+    <div class="lead">— 突然ですが、質問です。</div>
+    <h1>どうやったら、<br><span class="accent">売上は最大化</span>するか？</h1>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 3 / PAIN
+     SLIDE 3 / ANSWER
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide quote-slide">
-    <div class="slide-num">03 / PAIN</div>
-    <div class="quote-mark">"</div>
-    <div class="quote-text">
-      お客様は、<span class="strong">「いつか返ってくる」</span>ことを<br>
-      前提に待ってはくれない。<br><br>
-      <span class="em">気になった瞬間に</span>、知りたい。<br>
-      <span class="em">迷ったその場で</span>、判断したい。
-    </div>
-    <div class="source">— 記事『LINEの返信遅れで失注してませんか？』より引用</div>
+  <div class="slide s-answer">
+    <div class="slide-num">03 / A</div>
+    <div class="lead">答えは、シンプルです。</div>
+    <h1>見込み客 全員に、<br><span class="em">1人ずつ</span>、答える。</h1>
+    <div class="seal">これ以上の方法は、ありません。</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 4 / LOSS
+     SLIDE 4 / REALITY
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide loss">
-    <div class="slide-num">04 / LOSS</div>
-    <div class="label">営業時間外（22:00 — 翌09:00）に届く、すべての問い合わせ</div>
-    <div class="equation">
-      11<span style="font-size:3rem;color:var(--text-dim)">時間</span>
-      <span class="arrow">→</span>
-      <span class="red">沈黙</span>
+  <div class="slide s-reality">
+    <div class="slide-num">04 / NOW</div>
+    <h2>でも、エヌイチの現実は──</h2>
+    <div class="stage">
+      <div>
+        <div class="num">80,000</div>
+        <div class="num-label">運用LINEの友だち合計</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="doing">
+        一斉配信
+        <span class="small">＝ 全員に、同じ言葉を、同時に送るだけ。</span>
+      </div>
     </div>
-    <div class="punch">しかも、<span class="em">人の気持ちが動くのは</span>、深夜。</div>
+    <div class="punch">関係性は、<span class="em">一方通行</span>のまま。</div>
   </div>
 </section>
 
 <!-- ============================================================
-     SLIDE 5 / MOMENT (LINE chat)
+     SLIDE 5 / IF
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide line-chat">
-    <div class="slide-num">05 / MOMENT</div>
+  <div class="slide s-if">
+    <div class="slide-num">05 / IF</div>
+    <h1>もし、8万人 全員に<br><span class="em">1人ずつ</span> 答えられたら？</h1>
+    <div class="desc">
+      売上は、<span class="strong">いくら伸びる</span>でしょうか。<br>
+      信頼は、<span class="strong">どれだけ深まる</span>でしょうか。
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 6 / IMPOSSIBLE
+     ============================================================ -->
+<section data-background-color="#0a0a0f">
+  <div class="slide s-impossible">
+    <div class="slide-num">06 / WALL</div>
+    <h1>これまでは、<br><span class="em">不可能</span>だった。</h1>
+    <div class="calc">
+      <span>1人で対応できるのは </span><span class="num">月50人</span>
+      <span class="vs">vs</span>
+      <span class="num">8万人</span>
+    </div>
+    <div class="desc">差は、1,600倍。<br>人間が頑張っても、絶対に届かない壁。</div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 7 / CLAUDE CAN
+     ============================================================ -->
+<section data-background-color="#0a0a0f">
+  <div class="slide s-can">
+    <div class="slide-num">07 / SOLUTION</div>
+    <h1>Claude なら、<span class="em">できる</span>。</h1>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <div class="title"><span class="accent">記憶</span>する</div>
+        <div class="desc">
+          1ヶ月前に話してくれた<span class="strong">本人の言葉</span>を覚えて、その文脈で会話する。
+        </div>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <div class="title"><span class="accent">人間っぽい</span>時間差</div>
+        <div class="desc">
+          即返信ではなく、<span class="strong">数十秒〜数分の自然な間</span>で返す。深夜は朝に。
+        </div>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <div class="title"><span class="accent">人格</span>を持てる</div>
+        <div class="desc">
+          口調・価値観・考え方を再現できる。<span class="strong">「奥山さんっぽいAI」</span>も可能。
+        </div>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <div class="title"><span class="accent">通数</span>を固定</div>
+        <div class="desc">
+          1日◯通までに制限すれば、<span class="strong">配信コストも完全にコントロール</span>可能。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SLIDE 8 / MOMENT (LINE chat)
+     ============================================================ -->
+<section data-background-color="#0a0a0f">
+  <div class="slide s-moment">
+    <div class="slide-num">08 / MOMENT</div>
     <div class="left">
       <div class="time-big">23:14</div>
       <div class="desc">
-        田中さんが、ふと不安になる夜。<br>
+        田中さんが、相談前夜に不安になる。<br>
         普通なら朝まで温度は冷めて、もう戻ってこない。
       </div>
       <div class="punch">
-        でも今夜は、<span style="color:var(--accent);font-weight:900">30秒後にユウタが返す。</span><br>
-        しかも、田中さんを覚えた状態で。
+        でも今夜は、<span class="em">数十秒後にユウタが返す。</span><br>
+        しかも、田中さんを<span class="em">覚えた状態で。</span>
       </div>
     </div>
     <div class="phone">
@@ -779,103 +775,40 @@ html, body {
 </section>
 
 <!-- ============================================================
-     SLIDE 6 / SCALE
+     SLIDE 9 / FIRST STEP + ROADMAP (エヌイチのみ)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide bignum">
-    <div class="slide-num">06 / SCALE</div>
-    <div class="formula">8万人 <span class="x">×</span> 24時間</div>
-    <div class="result">1,920,000</div>
-    <div class="unit">人 × 時間 ／ 1日</div>
-    <div class="desc">
-      しかも、その全員を<strong>覚えているAI</strong>が応える。<br>
-      Claude が登場するまで、これは不可能でした。
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 7 / CORE
-     ============================================================ -->
-<section data-background-color="#0a0a0f">
-  <div class="slide core">
-    <div class="slide-num">07 / CORE</div>
-    <h1>人の気持ちが動いた瞬間を、<br><span class="accent">止めない。</span></h1>
-    <div class="seal">— THIS IS WHAT WE BUILD —</div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 8 / FIRST STEP
-     ============================================================ -->
-<section data-background-color="#0a0a0f">
-  <div class="slide flow">
-    <div class="slide-num">08 / FIRST STEP</div>
-    <h2>第一歩は、<span class="accent">個別相談予約者</span>で検証する。</h2>
-    <div class="flow-chart">
-      <div class="flow-box">個別相談 予約完了</div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-box">予約者専用LINE（BAN対策アカウント）へ自動移行</div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-box highlight">AIメンター起動</div>
-      <div class="flow-bullets">
-        <div><span class="dot">●</span> 予約直後 ── 不安と目標を、対話で言語化</div>
-        <div><span class="dot">●</span> 中間日 ── 温度維持の能動配信</div>
-        <div><span class="dot">●</span> 前日朝 ── 個別カスタマイズの準備支援</div>
-      </div>
-      <div class="flow-arrow">↓</div>
-      <div class="flow-box result">当日参加率 ↑ ／ 成約率 ↑</div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     SLIDE 9 / ROADMAP
-     ============================================================ -->
-<section data-background-color="#0a0a0f">
-  <div class="slide matrix">
+  <div class="slide s-step">
     <div class="slide-num">09 / ROADMAP</div>
-    <h2>顧客フェーズ × 事業 ── <span class="accent">広がる地図。</span></h2>
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>検討中</th>
-          <th>予約後</th>
-          <th>受講中</th>
-          <th>卒業後</th>
-          <th>5年後</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>エヌイチ</td>
-          <td>適性診断</td>
-          <td class="now">不安解消</td>
-          <td>学習サポート</td>
-          <td>リファラル</td>
-          <td>復縁</td>
-        </tr>
-        <tr>
-          <td>OKA</td>
-          <td>体験勧誘</td>
-          <td>入会前ケア</td>
-          <td>トレーニング伴走</td>
-          <td>卒会後フォロー</td>
-          <td>復帰促進</td>
-        </tr>
-        <tr>
-          <td>beyond</td>
-          <td>事前商談</td>
-          <td>取引開始</td>
-          <td>関係深化</td>
-          <td>LTV最大化</td>
-          <td>紹介発生</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1>まず、<span class="em">予約者</span>から。</h1>
+    <div class="lead">
+      個別相談の予約者専用LINEに、AIメンターを起動。<br>
+      KPI ＝ <strong style="color:var(--accent)">当日参加率 / 成約率</strong>。ここで成果が出れば、全員に拡げる。
+    </div>
+    <div class="roadmap">
+      <div class="stage">
+        <div class="phase">PHASE 1</div>
+        <div class="label">検討中</div>
+      </div>
+      <div class="stage now">
+        <div class="phase">PHASE 2</div>
+        <div class="label">予約後</div>
+      </div>
+      <div class="stage">
+        <div class="phase">PHASE 3</div>
+        <div class="label">受講中</div>
+      </div>
+      <div class="stage">
+        <div class="phase">PHASE 4</div>
+        <div class="label">卒業後</div>
+      </div>
+      <div class="stage">
+        <div class="phase">PHASE 5</div>
+        <div class="label">5年後</div>
+      </div>
+    </div>
     <div class="footnote">
-      Claude Code なら、<span class="em">新しいセルが見えた瞬間に、コードで埋められる。</span>
+      Claude Code なら、<span class="em">次のフェーズが見えた瞬間に、コードで埋められる。</span>
     </div>
   </div>
 </section>
@@ -884,9 +817,9 @@ html, body {
      SLIDE 10 / CLOSING
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide closing">
+  <div class="slide s-closing">
     <div class="slide-num">10 / CLOSING</div>
-    <h1>1ヶ月後、<br><span class="accent">最初のテスト結果</span>を持ってきます。</h1>
+    <h1>1ヶ月後、<br><span class="em">最初のテスト結果</span>を持ってきます。</h1>
     <div class="stack">CLAUDE CODE <span class="dot">·</span> LINE <span class="dot">·</span> AGENT SDK</div>
   </div>
 </section>
