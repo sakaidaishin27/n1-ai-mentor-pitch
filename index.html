@@ -22,6 +22,8 @@
   --line-green: #06c755;
   --line-bg: #8eaeca;
   --border: #2a2a36;
+  --red: #ef4444;
+  --blue: #38bdf8;
 }
 
 html, body { background: var(--bg); }
@@ -246,33 +248,64 @@ html, body { background: var(--bg); }
 .s-reality .punch .em { color: var(--accent); }
 
 /* ========================================
-   #5 IF
+   #5 LOSS (heat curve graph)
    ======================================== */
-.s-if {
+.s-loss {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
   align-items: center;
-  text-align: center;
+  gap: 5rem;
+  padding: 80px 100px;
 }
 
-.s-if h1 {
-  font-size: 6rem;
+.s-loss .text h2 {
+  font-size: 4.2rem;
   font-weight: 900;
-  line-height: 1.5;
+  line-height: 1.4;
   letter-spacing: -0.03em;
-  margin-bottom: 4rem;
+  margin-bottom: 2.5rem;
 }
 
-.s-if h1 .em { color: var(--accent); }
+.s-loss .text h2 .em {
+  color: var(--accent);
+}
 
-.s-if .desc {
-  font-size: 2.2rem;
+.s-loss .text .desc {
+  font-size: 1.6rem;
   color: var(--text-dim);
-  font-weight: 400;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
-.s-if .desc .strong {
+.s-loss .text .desc .strong {
   color: var(--text);
   font-weight: 700;
+}
+
+.s-loss .chart {
+  width: 100%;
+}
+
+.s-loss svg {
+  width: 100%;
+  height: auto;
+}
+
+.chart-label-bold {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.chart-label {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.chart-label-small {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* ========================================
@@ -488,40 +521,42 @@ html, body { background: var(--bg); }
 }
 
 /* ========================================
-   #9 FIRST STEP + ROADMAP (エヌイチのみ)
+   #9 ROADMAP (エヌイチファネル7段階)
    ======================================== */
 .s-step {
-  padding: 100px 120px;
+  padding: 80px 80px;
 }
 
 .s-step h1 {
-  font-size: 4.5rem;
+  font-size: 4.2rem;
   font-weight: 900;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.03em;
+  text-align: center;
 }
 
 .s-step h1 .em { color: var(--accent); }
 
 .s-step .lead {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--text-dim);
   margin-bottom: 3rem;
+  text-align: center;
   line-height: 1.6;
 }
 
-.s-step .roadmap {
+.s-step .funnel {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0.5rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.4rem;
+  margin: 2rem 0;
 }
 
 .s-step .stage {
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  padding: 1.4rem 0.6rem;
   text-align: center;
   position: relative;
 }
@@ -532,17 +567,18 @@ html, body { background: var(--bg); }
 }
 
 .s-step .stage .phase {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: var(--text-mute);
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .s-step .stage .label {
-  font-size: 1.4rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text);
+  line-height: 1.3;
 }
 
 .s-step .stage.now .label {
@@ -557,8 +593,8 @@ html, body { background: var(--bg); }
   transform: translateX(-50%);
   background: var(--accent);
   color: white;
-  font-size: 0.8rem;
-  padding: 3px 12px;
+  font-size: 0.75rem;
+  padding: 3px 10px;
   border-radius: 6px;
   font-weight: 700;
   letter-spacing: 0.05em;
@@ -671,15 +707,75 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 5 / IF
+     SLIDE 5 / LOSS (heat curve)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
-  <div class="slide s-if">
-    <div class="slide-num">05 / IF</div>
-    <h1>もし、8万人 全員に<br><span class="em">1人ずつ</span> 答えられたら？</h1>
-    <div class="desc">
-      売上は、<span class="strong">いくら伸びる</span>でしょうか。<br>
-      信頼は、<span class="strong">どれだけ深まる</span>でしょうか。
+  <div class="slide s-loss">
+    <div class="slide-num">05 / LOSS</div>
+    <div class="text">
+      <h2>「いつか返ってくる」を、<br>お客様は<span class="em">待てない</span>。</h2>
+      <p class="desc">
+        問い合わせた直後が、<span class="strong">熱量のピーク</span>。<br><br>
+        返信が遅れるだけで、本来つながるはずだった見込み客が離脱する <span class="strong">「見えない機会損失」</span>が起きている。
+      </p>
+    </div>
+    <div class="chart">
+      <svg viewBox="0 0 880 560" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid baseline (background subtle) -->
+        <line x1="100" y1="500" x2="820" y2="500" stroke="#3a3a48" stroke-width="2" />
+        <line x1="100" y1="500" x2="100" y2="60" stroke="#3a3a48" stroke-width="2" />
+
+        <!-- X axis arrow -->
+        <polygon points="820,500 810,494 810,506" fill="#3a3a48" />
+        <!-- Y axis arrow -->
+        <polygon points="100,60 94,70 106,70" fill="#3a3a48" />
+
+        <!-- Y axis label (顧客の熱量) -->
+        <text x="50" y="280" class="chart-label-bold" fill="#b8bcc4" text-anchor="middle" transform="rotate(-90 50 280)">顧客の熱量</text>
+        <!-- X axis label (時間) -->
+        <text x="830" y="510" class="chart-label" fill="#b8bcc4">時間</text>
+
+        <!-- 行動の壁 dashed line -->
+        <line x1="100" y1="280" x2="780" y2="280" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 6" />
+        <text x="90" y="285" class="chart-label-small" fill="#9ca3af" text-anchor="end">行動の壁</text>
+
+        <!-- AI即時対応 (青) - smooth curve maintaining height -->
+        <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290"
+              stroke="#38bdf8" stroke-width="6" fill="none" stroke-linecap="round" />
+        <!-- AI gradient fill below -->
+        <path d="M 130,100 Q 280,80 420,180 Q 580,260 760,290 L 760,500 L 130,500 Z"
+              fill="url(#blueGrad)" opacity="0.18" />
+        <!-- Arrow at end -->
+        <polygon points="760,290 745,283 745,297" fill="#38bdf8" />
+
+        <!-- 従来の対応 (赤) - staircase descending -->
+        <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490"
+              stroke="#ef4444" stroke-width="6" fill="none" stroke-linejoin="round" />
+        <path d="M 130,100 L 200,100 L 200,170 L 280,170 L 280,240 L 360,240 L 360,310 L 440,310 L 440,380 L 520,380 L 520,440 L 600,440 L 600,490 L 700,490 L 700,500 L 130,500 Z"
+              fill="url(#redGrad)" opacity="0.18" />
+
+        <!-- 離脱 mark (×) -->
+        <circle cx="710" cy="495" r="14" fill="#ef4444" opacity="0.25" />
+        <text x="710" y="503" class="chart-label-bold" fill="#ef4444" text-anchor="middle" font-weight="900">×</text>
+        <text x="730" y="500" class="chart-label-small" fill="#ef4444" font-weight="700">離脱</text>
+
+        <!-- Labels for lines -->
+        <text x="600" y="240" class="chart-label-bold" fill="#38bdf8" font-weight="700">AI 即時対応</text>
+        <text x="780" y="260" class="chart-label-small" fill="#38bdf8" text-anchor="end">→ 次のアクションへ</text>
+        <text x="500" y="430" class="chart-label-bold" fill="#ef4444" font-weight="700">従来の対応</text>
+
+        <!-- Gradients -->
+        <defs>
+          <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ef4444" stop-opacity="0.5" />
+            <stop offset="100%" stop-color="#ef4444" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   </div>
 </section>
@@ -690,7 +786,7 @@ html, body { background: var(--bg); }
 <section data-background-color="#0a0a0f">
   <div class="slide s-impossible">
     <div class="slide-num">06 / WALL</div>
-    <h1>これまでは、<br><span class="em">不可能</span>だった。</h1>
+    <h1>1人ずつ答えるのは、<br>これまで<span class="em">不可能</span>だった。</h1>
     <div class="calc">
       <span>1人で対応できるのは </span><span class="num">月50人</span>
       <span class="vs">vs</span>
@@ -775,36 +871,44 @@ html, body { background: var(--bg); }
 </section>
 
 <!-- ============================================================
-     SLIDE 9 / FIRST STEP + ROADMAP (エヌイチのみ)
+     SLIDE 9 / ROADMAP (エヌイチファネル7段階)
      ============================================================ -->
 <section data-background-color="#0a0a0f">
   <div class="slide s-step">
-    <div class="slide-num">09 / ROADMAP</div>
-    <h1>まず、<span class="em">予約者</span>から。</h1>
+    <div class="slide-num">09 / FUNNEL</div>
+    <h1>まず、<span class="em">予約後</span>のフェーズから。</h1>
     <div class="lead">
-      個別相談の予約者専用LINEに、AIメンターを起動。<br>
-      KPI ＝ <strong style="color:var(--accent)">当日参加率 / 成約率</strong>。ここで成果が出れば、全員に拡げる。
+      個別相談予約者に向けて検証 → 成果が出れば、ファネル全体に展開。<br>
+      KPI ＝ <strong style="color:var(--accent)">当日参加率 / 成約率</strong>
     </div>
-    <div class="roadmap">
+    <div class="funnel">
       <div class="stage">
         <div class="phase">PHASE 1</div>
-        <div class="label">検討中</div>
+        <div class="label">リストイン</div>
       </div>
-      <div class="stage now">
+      <div class="stage">
         <div class="phase">PHASE 2</div>
-        <div class="label">予約後</div>
+        <div class="label">セミナー</div>
       </div>
       <div class="stage">
         <div class="phase">PHASE 3</div>
-        <div class="label">受講中</div>
+        <div class="label">ライン移行</div>
       </div>
       <div class="stage">
         <div class="phase">PHASE 4</div>
-        <div class="label">卒業後</div>
+        <div class="label">検討中</div>
+      </div>
+      <div class="stage now">
+        <div class="phase">PHASE 5</div>
+        <div class="label">予約後</div>
       </div>
       <div class="stage">
-        <div class="phase">PHASE 5</div>
-        <div class="label">5年後</div>
+        <div class="phase">PHASE 6</div>
+        <div class="label">成約</div>
+      </div>
+      <div class="stage">
+        <div class="phase">PHASE 7</div>
+        <div class="label">受講中</div>
       </div>
     </div>
     <div class="footnote">
